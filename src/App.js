@@ -1,5 +1,7 @@
 import React from 'react'
 
+import './App.css'
+
 import {ChatEngine} from 'react-chat-engine'
 
 const projectID = process.env.REACT_APP_API_KEY

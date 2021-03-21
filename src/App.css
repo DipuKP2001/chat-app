@@ -195,7 +195,6 @@
   .send-icon {
     top: 1px;
     position: relative;
-    transform: rotate(-90deg);
   }
   
   .picture-icon {

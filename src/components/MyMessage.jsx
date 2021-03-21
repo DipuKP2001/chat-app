@@ -1,4 +1,5 @@
 const MyMessage = ({message}) => {
+    console.log(message)
     if(message?.attachments?.length > 0) {
         return (
             <img 
@@ -10,8 +11,8 @@ const MyMessage = ({message}) => {
         )
     }
     return(
-        <div>
-            MyMessage
+        <div className="message" style={{float:"right",marginRight:"18px",color:"white",backgroundColor:"#3B2A50"}}>
+            {message.text}
         </div>
     )
 }

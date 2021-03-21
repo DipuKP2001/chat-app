@@ -11,7 +11,7 @@ const userName = process.env.REACT_APP_USER_NAME
 const userSecret = process.env.REACT_APP_USER_SECRET
 
 const App = () => {
-    return( 
+    return(   
         <ChatEngine 
             height="100vh" 
             projectID={projectID}

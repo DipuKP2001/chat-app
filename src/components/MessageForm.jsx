@@ -24,7 +24,9 @@ const MessageForm = (props) => {
         setValue('');
       };
     
-      const handleUpload = () => {}
+      const handleUpload = (event) => {
+        sendMessage(creds,chatId,{files:event.target.files,text:''})
+      }
 
     return(
         <form onSubmit={handleSubmit} className="message-form">
@@ -45,7 +47,7 @@ const MessageForm = (props) => {
                 style={{display:"none"}}
                 id="upload-button"
                 multiple={false}
-                onChange={handleUpload}
+                onChange={handleUpload.bind(this)}
             />
             <button type="submit" className="send-button">
                 <SendOutlined className="send-icon"/>

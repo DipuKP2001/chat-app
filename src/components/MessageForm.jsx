@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import {sendMessage,isTyping} from 'react-chat-engine'
-import {SendOutlined,PictureOutlined} from '@ant-design/icons'
+import {SendOutlined,PictureOutlined, LogoutOutlined} from '@ant-design/icons'
 
 const MessageForm = (props) => {
     const [value,setValue] = useState('')
@@ -28,6 +28,12 @@ const MessageForm = (props) => {
         sendMessage(creds,chatId,{files:event.target.files,text:''})
       }
 
+      const handleLogout = () => {
+          localStorage.clear('userName')
+          localStorage.clear('password')
+          window.location.reload()
+      }
+
     return(
         <form onSubmit={handleSubmit} className="message-form">
             <input 
@@ -51,6 +57,9 @@ const MessageForm = (props) => {
             />
             <button type="submit" className="send-button">
                 <SendOutlined className="send-icon"/>
+            </button>
+            <button onClick={handleLogout} className="logout-button">
+                <LogoutOutlined />
             </button>
         </form>
     )
